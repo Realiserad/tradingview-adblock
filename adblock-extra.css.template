@@ -1,0 +1,30 @@
+/* Extra cosmetic rules for TradingView, read at startup from
+ *   ~/.config/TradingView/adblock-extra.css
+ * Edit freely and restart TradingView - no repatching needed, and this file
+ * survives TradingView package updates.
+ *
+ * The chart toolbar's "Trade" and "Upgrade" buttons are already hidden by
+ * default, in the blocker itself. If a TradingView web update renames them and
+ * they come back, override the selector here (see README: "Hidden UI").
+ *
+ * The rules below hide TradingView's *other* upsell/promo UI. They are NOT
+ * enabled by default: they are not ads, and over-broad link matching can hide
+ * real navigation. Uncomment the ones you want.
+ */
+
+/* "GO PRO" / upgrade buttons and promo banners
+a[href*="/gopro"],
+[data-name="go-pro"], [data-name="gopro"],
+[class*="promoBanner"], [class*="promo-banner"],
+[class*="bannerPromo"], [class*="upgradeBanner"] {
+  display: none !important;
+}
+*/
+
+/* Campaign banners (Black Friday sales etc.)
+a[href*="utm_campaign=promo"],
+a[href*="utm_medium=banner"],
+a[href*="/black-friday"] {
+  display: none !important;
+}
+*/
